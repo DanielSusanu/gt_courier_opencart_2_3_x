@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>GT Courier Voucher</name>
+  <code>gt_courier_voucher</code>
+  <version>2.3.x</version>
+  <author>DanielSusanu</author>
+  <link>https://www.danielsusanu.com</link>
+  <!-- <file path="admin/controller/sale/order.php">
+      <operation>
+      <search><![CDATA[$this->response->setOutput($this->load->view('sale/order_info']]></search>
+      <add position="before"><![CDATA[
+         $data['order_info']=$order_info;
+      ]]></add>
+      </operation>
+  </file> -->
+
+  
+  <file path="admin/view/template/sale/order_info.tpl">
+      <operation>
+        <search><![CDATA[<div class="page-header">]]></search>
+        <add position="before"><![CDATA[         
+          <div id="gtCourierVoucher"></div>         
+           <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+           <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+           <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+           <script type="text/babel" src="view/javascript/gt_courier/order_info.js?v=1.0.0"></script> 
+        ]]></add>
+      </operation>      
+  </file>
+
+  <file path="admin/view/template/sale/order_info.tpl">
+      <operation>
+        <search><![CDATA[<h1><?php echo $heading_title; ?></h1>]]></search>
+        <add position="before"><![CDATA[      
+         <div class="pull-right" style="margin-right:5px;">   
+           <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#gtCourierVoucherModal">GT Courier Voucher</a>   
+         </div>
+        ]]></add>
+      </operation>      
+  </file>
+</modification>
