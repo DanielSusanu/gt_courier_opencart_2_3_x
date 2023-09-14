@@ -170,7 +170,7 @@ const App = () => {
       p0206: order.telephone,
       p0210: order.email,
       p101: parseFloat(order.weight) > 0 ? order.weight : 0.2,
-      p0107: orderNotes,
+      p0207: orderNotes,
       lang: 'GR',
     };
 
